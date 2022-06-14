@@ -1,0 +1,22 @@
+server:
+  port: 9000
+  
+  
+spring:
+  cloud:
+    gateway:
+      routes:
+    
+        
+      - id: Day3Assessment
+        uri:
+          http://localhost:8222
+        predicates:
+          - Path= /SpringConcepts
+        
+      - id: jfs-ribbon-app
+        uri:
+          http://localhost:1111
+        predicates:
+          - Path= /prod/app
+    
